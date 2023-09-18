@@ -1,3 +1,3 @@
-# ASU FHIR Consent Validation
+# ASU Research Consent on FHIR
 
-Place-holder for the ASU FHIR Consent validation project.
+Place holder for the ASU Research Consent on FHIR.
