@@ -44,17 +44,24 @@ Title: "Notification Details for Results"
 Description: "Details about how and when results will be notified."
 * value[x] only string
 
+ValueSet: CombinedConsentAndSecurityValueSet
+Id: combined-consent-and-security-valueset
+Title: "Combined Consent Content and Security Label Value Set"
+* include codes from valueset http://hl7.org/fhir/ValueSet/security-label-event-examples
+* include codes from valueset http://hl7.org/fhir/ValueSet/consent-content-code
+* include codes from valueset http://hl7.org/fhir/ValueSet/contact-point-system
+
 Profile:         ResearchConsent
 Parent:          Consent
 Id:              ASU.research-consent
 Title:           "Research Consent Profile"
 Description:     "A profile to participate in research protocol and information sharing required"
-* grantee 1..*
 * subject only Reference(ResearchConsentPatient)
 * subject 1..1
-* date 1..1
 * grantor ^alias[0] = "investigator"
 * grantor ^alias[+] = "consenter"
+* provision.code from CombinedConsentAndSecurityValueSet (required)
+* provision.data.reference only Reference(ResearchConsentSpecimen|Observation)
 * extension contains ConsentWitness named witness 0..*
 * extension contains ConsentResearchStudy named researchStudy 1..*
 * extension contains ConsentSpecimen named specimen 0..*

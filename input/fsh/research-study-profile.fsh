@@ -52,13 +52,7 @@ Id: ASU.research-study-with-consent
 Title: "Research Study with Consent Profile"
 Description: "This profile defines the minimum required information for a Research Study with Consent."
 * associatedParty ^alias = "organizations"
-* associatedParty.period.start 1..1
-* associatedParty.period.start ^alias = "project_start_date"
-* associatedParty.period.end 1..1
-* associatedParty.period.end ^alias = "project_end_date"
-* title 1..1
 * status 1..1
-* recruitment.actualNumber 1..1
 * primaryPurposeType ^alias = "study_procedures"
 * description ^alias[0] = "project_description"
 * description ^alias[+] = "project_details"
@@ -67,8 +61,6 @@ Description: "This profile defines the minimum required information for a Resear
 * phase ^alias = "study_phase"
 * region ^alias = "study_place"
 * status ^alias = "study_status"
-* progressStatus ^alias = "study_withdraw"
-* whyStopped ^alias = "participant_termination"
 * extension contains ParticipantRights named participantRights 0..*
 * extension contains Compensation named compensation 0..1
 * extension contains Cost named cost 0..1
