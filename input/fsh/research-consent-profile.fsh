@@ -5,16 +5,6 @@ Title: "Consent Witness Extension"
 Description: "An extension to add a witness property of which cardinality is 0..1 Reference(Patient) to consent resource"
 * url = "https://hl7.org/fhir/extensions/StructureDefinition-consent-Witness.html"
 
-Extension: ConsentResearchStudy
-Id: ASU.consent-research-study
-Title: "Consent Research Study Extension"
-Description: "An extension to add a research study property of which cardinality is 1..1 Reference(ResearchStudyWithConsent) to consent resource"
-* extension contains 
-  studyId 1..1 MS and
-  study 1..1 MS
-* extension[studyId].value[x] only string // Assuming studyId is an integer
-* extension[study].value[x] only Reference(ResearchStudyWithConsent) // Reference to a ResearchStudy resource
-
 Extension: ConsentSpecimen
 Id: ASU.consent-specimen
 Title: "Consent to Specimen Link"
@@ -66,7 +56,6 @@ Description:     "A profile to participate in research protocol and information 
 * provision.code from CombinedConsentAndSecurityValueSet (required)
 * provision.data.reference only Reference(ResearchConsentSpecimen|Observation)
 * extension contains ConsentWitness named witness 0..*
-* extension contains ConsentResearchStudy named researchStudy 1..*
 * extension contains ConsentSpecimen named specimen 0..*
 * extension contains ConsentObservation named observation 0..*
 * extension contains SampleUsageLimitation named sampleUsageLimitation 0..*
