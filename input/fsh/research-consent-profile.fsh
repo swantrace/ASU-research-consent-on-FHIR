@@ -5,12 +5,15 @@ Title: "Consent Witness Extension"
 Description: "An extension to add a witness property of which cardinality is 0..1 Reference(Patient) to consent resource"
 * url = "https://hl7.org/fhir/extensions/StructureDefinition-consent-Witness.html"
 
-Profile: ConsentResearchStudy
-Parent: Extension
+Extension: ConsentResearchStudy
 Id: ASU.consent-research-study
 Title: "Consent Research Study Extension"
-Description: "An extension to add a research study property of which cardinality is 0..1 Reference(ResearchStudy) to consent resource"
-* url = "https://hl7.org/fhir/extensions/StructureDefinition-consent-ResearchStudyContext.html"
+Description: "An extension to add a research study property of which cardinality is 1..1 Reference(ResearchStudyWithConsent) to consent resource"
+* extension contains 
+  studyId 1..1 MS and
+  study 1..1 MS
+* extension[studyId].value[x] only string // Assuming studyId is an integer
+* extension[study].value[x] only Reference(ResearchStudyWithConsent) // Reference to a ResearchStudy resource
 
 Extension: ConsentSpecimen
 Id: ASU.consent-specimen
