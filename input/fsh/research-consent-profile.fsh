@@ -1,63 +1,83 @@
-Profile: ConsentWitness
-Parent: Extension
-Id: ASU.consent-witness
-Title: "Consent Witness Extension"
-Description: "An extension to add a witness property of which cardinality is 0..1 Reference(Patient) to consent resource"
-* url = "https://hl7.org/fhir/extensions/StructureDefinition-consent-Witness.html"
+CodeSystem: ProvisionActionCodeSystem
+Id: ASU.provision-action-code-system
+Title: "Provision Action Code System"
+Description: "The action of the consent."
+* #reuse "Reuse"
+* #recontact "Recontact"
+* #test "Test"
+* #treat "Treat"
+* #notify "Notify"
 
-Extension: ConsentSpecimen
-Id: ASU.consent-specimen
-Title: "Consent to Specimen Link"
-Description: "Links the Consent resource to one or more Specimen resources."
-* value[x] only Reference
-* valueReference only Reference(ResearchConsentSpecimen)
+ValueSet: ProvisionActionValueSet
+Id: ASU.provision-action-value-set
+Title: "Provision Action Value Set"
+Description: "The action of the consent."
+* include codes from system ProvisionActionCodeSystem
+* include codes from system http://hl7.org/fhir/ValueSet/consent-action
 
-Extension: ConsentObservation
-Id: ASU.consent-observation
-Title: "Consent to Observation Link"
-Description: "Links the Consent resource to one or more Observation resources."
-* value[x] only Reference
-* valueReference only Reference(Observation)
+CodeSystem: ExtendedResourceTypeCodeSystem
+Id: ASU.extended-resource-type-code-system
+Title: "Extended Resource Type Code System"
+Description: "The resource type of the extended resource."
+* #ResearchStudyResult "Research Study Result"
 
-Extension: SampleUsageLimitation
-Id: ASU.sample-usage-limitation
-Title: "Sample Usage Limitation"
-Description: "Details about the limitation on the usage of the sample."
-* value[x] only string
+ValueSet: ExtendedResourceTypeValueSet
+Id: ASU.extended-resource-type-value-set
+Title: "Extended Resource Type Value Set"
+Description: "The resource type of the extended resource."
+* include codes from system ExtendedResourceTypeCodeSystem
+* include codes from system http://hl7.org/fhir/ValueSet/resource-types
 
-Extension: PrivacyProtection
-Id: privacy-protection
-Title: "Privacy Protection Measures"
-Description: "Details on the measures taken to ensure privacy protection."
-* value[x] only string
+Extension: ResearchSubjectReference
+Id: ASU.research-subject-reference
+Title: "Research Subject Reference"
+Description: "A reference to a ResearchSubject resource."
+* value[x] only Reference(ResearchSubjectWithConsent)
 
-Extension: ResultNotification
-Id: result-notification
-Title: "Notification Details for Results"
-Description: "Details about how and when results will be notified."
-* value[x] only string
+Extension: WitnessReference
+Id: ASU.witness-reference
+Title: "Witness Reference"
+Description: "A reference to witness."
+* value[x] only Reference(Organization or Patient or Practitioner or RelatedPerson)
 
-ValueSet: CombinedConsentAndSecurityValueSet
-Id: combined-consent-and-security-valueset
-Title: "Combined Consent Content and Security Label Value Set"
-* include codes from valueset http://hl7.org/fhir/ValueSet/security-label-event-examples
-* include codes from valueset http://hl7.org/fhir/ValueSet/consent-content-code
-* include codes from valueset http://hl7.org/fhir/ValueSet/contact-point-system
+CodeSystem: ObligationCodeSystem
+Id: ASU.obligation-code-system
+Title: "Obligation Code System"
+Description: "The obligation of the consent."
+* #sampleUsageLimitation "Sample Usage Limitation"
+* #studyResultSharing "Study Result Sharing"
+* #participantDisenrollment "Participant Disenrollment"
+* #informationConfidentiality "Information Confidentiality"
+* #informationDeidentification "Information Deidentification"
+
+ValueSet: ObligationValueSet
+Id: ASU.obligation-value-set
+Title: "Obligation Value Set"
+Description: "The obligation of the consent."
+* include codes from system ObligationCodeSystem
+
+Extension: ProvisionObligation
+Id: ASU.provision-obligation
+Title: "Provision Obligation"
+Description: "The obligation of the consent."
+* extension contains 
+    type 1..1 and
+    reference 0..* and
+    period 0..1 and
+    parent 0..1
+* extension[type].value[x] only CodeableConcept 
+* extension[type].valueCodeableConcept from ObligationValueSet
+* extension[reference].value[x] only CodeableReference
+* extension[period].value[x] only Period
+* extension[parent].value[x] only CodeableConcept
+* extension[parent].valueCodeableConcept from ObligationValueSet
 
 Profile:         ResearchConsent
 Parent:          Consent
 Id:              ASU.research-consent
 Title:           "Research Consent Profile"
 Description:     "A profile to participate in research protocol and information sharing required"
-* subject only Reference(ResearchConsentPatient)
-* subject 1..1
-* grantor ^alias[0] = "investigator"
-* grantor ^alias[+] = "consenter"
-* provision.code from CombinedConsentAndSecurityValueSet (required)
-* provision.data.reference only Reference(ResearchConsentSpecimen|Observation)
-* extension contains ConsentWitness named witness 0..*
-* extension contains ConsentSpecimen named specimen 0..*
-* extension contains ConsentObservation named observation 0..*
-* extension contains SampleUsageLimitation named sampleUsageLimitation 0..*
-* extension contains PrivacyProtection named privacyProtection 0..*
-* extension contains ResultNotification named resultNotification 0..*
+* extension contains ResearchSubjectReference named researchSubject 1..1
+* extension contains WitnessReference named witness 0..*
+* provision.extension contains ProvisionObligation named obligation 0..*
+* provision.action from ProvisionActionValueSet

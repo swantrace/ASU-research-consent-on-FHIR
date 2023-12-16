@@ -1,68 +1,76 @@
-Alias: $ASUHIT = https://asu.edu
+Extension: StudyTeamContactInformation
+Id: ASU.study-team-contact-information
+Title: "Study Team Contact Information Extension"
+Description: "An extension that indicates the contact information for the study team."
+* value[x] only ContactDetail
 
-ValueSet: ParticipantRightsValueSet
-Id: ASU.participant-rights-value-set
-Title: "Participant Rights Value Set"
-Description: "A value set that defines the possible rights of the participants in a research study, such as informed consent, withdrawal, privacy, etc."
-* $ASUHIT#INFR "informed about research"
-* $ASUHIT#PURP "informed about purpose"
-* $ASUHIT#PROC "informed about procedures"
-* $ASUHIT#EXPT "informed about experimental part"
-* $ASUHIT#RISK "informed about risks and benefits"
-* $ASUHIT#OPTN "informed about other options"
-* $ASUHIT#PRIV "privacy protected"
-* $ASUHIT#WDRL "withdrawal allowed"
-* $ASUHIT#DISC "discussion encouraged"
-* $ASUHIT#COPY "copy of consent form provided"
-
-Extension: ParticipantRights
-Id: ASU.participant-rights
-Title: "Participant Rights Extension"
-Description: "An extension that indicates the rights of the participants in a research study, such as informed consent, withdrawal, privacy, etc."
+Extension: ResearchStudyConfidentiality
+Id: ASU.research-study-confidentiality
+Title: "Research Study Confidentiality Extension"
+Description: "An extension that indicates the confidentiality of the research study."
 * value[x] only CodeableConcept
-* valueCodeableConcept from ParticipantRightsValueSet (required)
 
-Extension: Compensation
-Id: ASU.compensation
-Title: "Compensation Extension"
+Extension: ResearchStudyCompensation
+Id: ASU.research-study-compensation
+Title: "Research Study Compensation Extension"
 Description: "An extension that indicates the amount and type of compensation offered to the participants in a research study."
-* value[x] only Money or Quantity
+* value[x] only CodeableReference
 
-Extension: Cost
-Id: ASU.cost
-Title: "Cost Extension"
+Extension: ResearchStudyCost
+Id: ASU.research-study-cost
+Title: "Research Study Cost Extension"
 Description: "An extension that indicates the estimated or actual cost of conducting a research study."
-* value[x] only Money
+* value[x] only CodeableReference
 
-Extension: Benefits
-Id: ASU.benefits
-Title: "Benefits Extension"
+Extension: ResearchStudyBenefits
+Id: ASU.research-study-benefits
+Title: "Research Study Benefits Extension"
 Description: "An extension that describes the potential benefits participants might receive by participating in the research study."
-* value[x] only string
+* value[x] only CodeableReference
 
-Extension: Risks
-Id: ASU.risks
-Title: "Risks Extension"
+Extension: ResearchStudyRisks
+Id: ASU.research-study-risks
+Title: "Research Study Risks Extension"
 Description: "An extension that describes any potential risks or adverse effects participants might face by participating in the research study."
-* value[x] only string
+* value[x] only CodeableReference
+
+Extension: ResearchStudyProcedures
+Id: ASU.research-study-procedures
+Title: "Research Study Procedures Extension"
+Description: "An extension that describes the procedures that will be performed on participants in the research study."
+* value[x] only CodeableReference
+
+Extension: ResearchStudyAlternativeProcedures
+Id: ASU.research-study-alternative-procedures
+Title: "Research Study Alternative Procedures Extension"
+Description: "An extension that describes the alternative procedures that will be performed on participants in the research study."
+* value[x] only CodeableReference
+
+Extension: ResearchStudyWithdraw
+Id: ASU.research-study-withdraw
+Title: "Research Study Withdraw Extension"
+Description: "An extension that describes the procedures for withdrawing from the research study."
+* value[x] only CodeableReference
+
+Extension: ResearchStudyParticipantTermination
+Id: ASU.research-study-participant-termination
+Title: "Research Study Participant Termination Extension"
+Description: "An extension that describes the procedures for terminating a participant from the research study."
+* value[x] only CodeableReference
 
 Profile: ResearchStudyWithConsent
 Parent: ResearchStudy
 Id: ASU.research-study-with-consent
 Title: "Research Study with Consent Profile"
 Description: "This profile defines the minimum required information for a Research Study with Consent."
-* associatedParty ^alias = "organizations"
-* status 1..1
-* primaryPurposeType ^alias = "study_procedures"
-* description ^alias[0] = "project_description"
-* description ^alias[+] = "project_details"
-* result ^alias = "study_result"
-* objective ^alias = "study_goal"
-* phase ^alias = "study_phase"
-* region ^alias = "study_place"
-* status ^alias = "study_status"
-* extension contains ParticipantRights named participantRights 0..*
-* extension contains Compensation named compensation 0..1
-* extension contains Cost named cost 0..1
-* extension contains Benefits named benefits 0..1
-* extension contains Risks named risks 0..1
+
+* extension contains StudyTeamContactInformation named contact 1..1
+* extension contains ResearchStudyConfidentiality named confidentiality 0..*
+* extension contains ResearchStudyCompensation named compensation 0..*
+* extension contains ResearchStudyCost named cost 0..*
+* extension contains ResearchStudyBenefits named benefits 0..*
+* extension contains ResearchStudyRisks named risks 0..*
+* extension contains ResearchStudyProcedures named procedures 0..*
+* extension contains ResearchStudyAlternativeProcedures named alternativeProcedures 0..*
+* extension contains ResearchStudyWithdraw named withdraw 0..*
+* extension contains ResearchStudyParticipantTermination named participantTermination 0..*
