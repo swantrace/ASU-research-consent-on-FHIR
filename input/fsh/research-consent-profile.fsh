@@ -72,12 +72,20 @@ Description: "The obligation of the consent."
 * extension[parent].value[x] only CodeableConcept
 * extension[parent].valueCodeableConcept from ObligationValueSet
 
+Extension: ProvisionActionPurpose
+Id: ASU.provision-action-purpose
+Title: "Provision Action Purpose"
+Description: "The purpose of the action."
+* value[x] only CodeableReference
+
+
 Profile:         ResearchConsent
 Parent:          Consent
 Id:              ASU.research-consent
 Title:           "Research Consent Profile"
 Description:     "A profile to participate in research protocol and information sharing required"
-* extension contains ResearchSubjectReference named researchSubject 1..1
+* extension contains ResearchSubjectReference named researchSubject 1..1 MS
 * extension contains WitnessReference named witness 0..*
-* provision.extension contains ProvisionObligation named obligation 0..*
+* extension contains ProvisionObligation named obligation 0..*
+* provision.extension contains ProvisionActionPurpose named actionPurpose 0..*
 * provision.action from ProvisionActionValueSet

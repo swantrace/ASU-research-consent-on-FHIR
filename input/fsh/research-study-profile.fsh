@@ -4,11 +4,23 @@ Title: "Study Team Contact Information Extension"
 Description: "An extension that indicates the contact information for the study team."
 * value[x] only ContactDetail
 
+Extension: ResearchStudyProjectDuration
+Id: ASU.research-study-project-duration
+Title: "Research Study Project Duration Extension"
+Description: "An extension that describes the duration of the research study."
+* value[x] only CodeableConcept
+
+Extension: ResearchStudyProcedures
+Id: ASU.research-study-procedures
+Title: "Research Study Procedures Extension"
+Description: "An extension that describes the procedures that will be performed on participants in the research study."
+* value[x] only CodeableReference
+
 Extension: ResearchStudyConfidentiality
 Id: ASU.research-study-confidentiality
 Title: "Research Study Confidentiality Extension"
 Description: "An extension that indicates the confidentiality of the research study."
-* value[x] only CodeableConcept
+* value[x] only CodeableReference
 
 Extension: ResearchStudyCompensation
 Id: ASU.research-study-compensation
@@ -32,12 +44,6 @@ Extension: ResearchStudyRisks
 Id: ASU.research-study-risks
 Title: "Research Study Risks Extension"
 Description: "An extension that describes any potential risks or adverse effects participants might face by participating in the research study."
-* value[x] only CodeableReference
-
-Extension: ResearchStudyProcedures
-Id: ASU.research-study-procedures
-Title: "Research Study Procedures Extension"
-Description: "An extension that describes the procedures that will be performed on participants in the research study."
 * value[x] only CodeableReference
 
 Extension: ResearchStudyAlternativeProcedures
@@ -64,13 +70,17 @@ Id: ASU.research-study-with-consent
 Title: "Research Study with Consent Profile"
 Description: "This profile defines the minimum required information for a Research Study with Consent."
 
-* extension contains StudyTeamContactInformation named contact 1..1
-* extension contains ResearchStudyConfidentiality named confidentiality 0..*
-* extension contains ResearchStudyCompensation named compensation 0..*
-* extension contains ResearchStudyCost named cost 0..*
-* extension contains ResearchStudyBenefits named benefits 0..*
-* extension contains ResearchStudyRisks named risks 0..*
-* extension contains ResearchStudyProcedures named procedures 0..*
-* extension contains ResearchStudyAlternativeProcedures named alternativeProcedures 0..*
-* extension contains ResearchStudyWithdraw named withdraw 0..*
-* extension contains ResearchStudyParticipantTermination named participantTermination 0..*
+* identifier 1..* MS
+* objective 1..* MS
+* description 1..1 MS
+* extension contains StudyTeamContactInformation named teamContact 1..* MS
+* extension contains ResearchStudyConfidentiality named confidentiality 1..* MS
+* extension contains ResearchStudyCompensation named compensation 1..* MS
+* extension contains ResearchStudyCost named cost 1..* MS
+* extension contains ResearchStudyBenefits named benefits 1..* MS
+* extension contains ResearchStudyRisks named risks 1..* MS
+* extension contains ResearchStudyProcedures named procedures 1..* MS
+* extension contains ResearchStudyAlternativeProcedures named alternativeProcedures 1..* MS
+* extension contains ResearchStudyWithdraw named withdraw 1..* MS
+* extension contains ResearchStudyParticipantTermination named participantTermination 1..* MS
+* extension contains ResearchStudyProjectDuration named projectDuration 1..1 MS
