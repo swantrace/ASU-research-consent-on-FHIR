@@ -84,6 +84,7 @@ Parent:          Consent
 Id:              ASU.research-consent
 Title:           "Research Consent Profile"
 Description:     "A profile to participate in research protocol and information sharing required"
+* date 1..1 MS
 * extension contains ResearchSubjectReference named researchSubject 1..1 MS
 * extension contains WitnessReference named witness 0..*
 * extension contains ProvisionObligation named obligation 0..*
