@@ -1,3 +1,27 @@
+ValueSet: ResearchStudyRole
+Id: ASU.research-study-role
+Title: "Research Study Role"
+Description: "Value set for roles in a research study."
+* include codes from system http://hl7.org/fhir/ValueSet/research-study-party-role
+
+Extension: OrganizationExtension
+Id: ASU.organization-extension
+Title: "Organization Extension"
+Description: "An extension to capture information about an organization associated with the research study, similar to associatedParty."
+* extension contains
+    name 0..1 and
+    role 1..1 and
+    period 0..* and
+    classifier 0..* and
+    party 0..1
+* extension[name].value[x] only string
+* extension[role].value[x] only CodeableConcept
+* extension[role].valueCodeableConcept from ResearchStudyRole
+* extension[period].value[x] only Period
+* extension[classifier].value[x] only CodeableConcept
+* extension[party].value[x] only Reference(Practitioner or PractitionerRole or Organization)
+
+
 Extension: StudyTeamContactInformation
 Id: ASU.study-team-contact-information
 Title: "Study Team Contact Information Extension"
@@ -73,6 +97,7 @@ Description: "This profile defines the minimum required information for a Resear
 * identifier 1..* MS
 * objective 1..* MS
 * description 1..1 MS
+* extension contains OrganizationExtension named organization 1..* MS
 * extension contains StudyTeamContactInformation named teamContact 1..* MS
 * extension contains ResearchStudyConfidentiality named confidentiality 1..* MS
 * extension contains ResearchStudyCompensation named compensation 1..* MS
@@ -84,3 +109,5 @@ Description: "This profile defines the minimum required information for a Resear
 * extension contains ResearchStudyWithdraw named withdraw 1..* MS
 * extension contains ResearchStudyParticipantTermination named participantTermination 1..* MS
 * extension contains ResearchStudyProjectDuration named projectDuration 1..1 MS
+* associatedParty ^short = "Prefer using the 'organization' extension."
+* associatedParty ^comment = "This element is traditionally used for associated parties, but it is recommended to use the 'organization' extension in this profile."
