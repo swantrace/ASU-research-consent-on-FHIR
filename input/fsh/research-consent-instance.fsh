@@ -26,8 +26,7 @@ The purpose of completing these forms is to allow study staff to access your med
 * provision[3].action = #treat
 * provision[3].resourceType = #Patient
 
-* provision[4].action = #test
-* provision[4].resourceType = #Observation
+* provision[4].action = #test-specimen
 * provision[4].code[0] = $LOINC#LP14443-3 "CD4"
 * provision[4].code[1] = $LOINC#48511-0 "HIV viral load"
 * provision[4].code[2] = $SCT#273426006 "Drug abuse screening test"
