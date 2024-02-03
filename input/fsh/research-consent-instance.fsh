@@ -51,7 +51,7 @@ Taking part in this study is up to you. You may decide not to take part or you m
 
 * extension[obligation][2].extension[type][0].valueCodeableConcept.coding[0] = #informationDeidentification
 * extension[obligation][2].extension[reference][0].valueCodeableReference.concept.text = """
-Recordings will be indentified by number only. Your name will not be noted by the study staff or reviewer on any recordings
+Recordings will be identified by number only. Your name will not be noted by the study staff or reviewer on any recordings.
 """
 
 * extension[obligation][3].extension[type][0].valueCodeableConcept.coding[0] = #sampleUsageLimitation
