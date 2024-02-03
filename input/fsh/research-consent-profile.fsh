@@ -52,12 +52,9 @@ Description: "The obligation of the consent."
 * extension contains 
     type 1..1 and
     reference 0..* and
-    parent 0..1
 * extension[type].value[x] only CodeableConcept 
 * extension[type].valueCodeableConcept from ObligationValueSet
 * extension[reference].value[x] only CodeableReference
-* extension[parent].value[x] only CodeableConcept
-* extension[parent].valueCodeableConcept from ObligationValueSet
 
 Extension: ProvisionActionPurpose
 Id: ASU.provision-action-purpose
