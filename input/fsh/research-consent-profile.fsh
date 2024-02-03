@@ -6,7 +6,7 @@ Description: "The action of the consent."
 * #recontact "Recontact"
 * #test "Test"
 * #treat "Treat"
-* #notify "Notify"
+* #notify-result "Notify Result"
 
 ValueSet: ProvisionActionValueSet
 Id: ASU.provision-action-value-set
@@ -14,19 +14,6 @@ Title: "Provision Action Value Set"
 Description: "The action of the consent."
 * include codes from system ProvisionActionCodeSystem
 * include codes from system http://hl7.org/fhir/ValueSet/consent-action
-
-CodeSystem: ExtendedResourceTypeCodeSystem
-Id: ASU.extended-resource-type-code-system
-Title: "Extended Resource Type Code System"
-Description: "The resource type of the extended resource."
-* #ResearchStudyResult "Research Study Result"
-
-ValueSet: ExtendedResourceTypeValueSet
-Id: ASU.extended-resource-type-value-set
-Title: "Extended Resource Type Value Set"
-Description: "The resource type of the extended resource."
-* include codes from system ExtendedResourceTypeCodeSystem
-* include codes from system http://hl7.org/fhir/ValueSet/resource-types
 
 Extension: ResearchSubjectReference
 Id: ASU.research-subject-reference
