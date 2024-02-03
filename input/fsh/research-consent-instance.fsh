@@ -7,8 +7,7 @@ Description: "A consent for a research study."
 * grantee[0] = Reference(sample-organization)
 * date = "2017-01-01"
 
-* provision[0].action = #recontact
-* provision[0].resourceType = #Patient
+* provision[0].action = #recontact-participant
 * provision[0].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies.
 """
@@ -21,8 +20,7 @@ If you choose to be in this study, we would like to contact you in the future to
 * provision[1].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 The purpose of completing these forms is to allow study staff to access your medical records at this hospital system and various clinics and agencies in the community.
 """
-* provision[2].action = #collect
-* provision[2].resourceType = #Specimen
+* provision[2].action = #collect-specimen
 * provision[2].code[0] = $SPECIMEN-TYPE#BLD
 
 * provision[3].action = #treat
@@ -35,8 +33,7 @@ The purpose of completing these forms is to allow study staff to access your med
 * provision[4].code[2] = $SCT#273426006 "Drug abuse screening test"
 * provision[4].code[3] = $SCT#1820004 "Ethanol measurement"
 
-* provision[5].action = #use
-* provision[5].resourceType = #Specimen
+* provision[5].action = #use-specimen
 * provision[5].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 You permit the researchers to record your session and use it for their research. Again, if you choose not to have the sessions recorded you may still take part in the study.
 """

@@ -2,8 +2,10 @@ CodeSystem: ProvisionActionCodeSystem
 Id: ASU.provision-action-code-system
 Title: "Provision Action Code System"
 Description: "The action of the consent."
-* #reuse "Reuse"
-* #recontact "Recontact"
+* #use-specimen "Use Specimen"
+* #reuse-specimen "Reuse Specimen"
+* #collect-specimen "Collect Specimen"
+* #recontact-participant "Recontact Participant"
 * #test "Test"
 * #treat "Treat"
 * #notify-result "Notify Result"
