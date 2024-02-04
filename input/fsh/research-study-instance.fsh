@@ -19,10 +19,11 @@ The study involves up to 14 visits over a period of 12 months. As part of the st
 4. Sign release forms so we may look at your medical records.
 5. Receive counseling and help from a patient navigator getting you into a clinic to receive HIV care and drug/alcohol treatment (if needed) OR receive the services and help you would normally get at this hospital to refer you into a clinic for HIV care and drug/alcohol treatment.
 """
-* extension[organization][0].extension[name].valueString = "National Institute on Drug Abuse(NIDA)" 
-* extension[organization][0].extension[role].valueCodeableConcept.coding[0].code = #funding-source
-* extension[organization][0].extension[period].valuePeriod.start = "2024-01-01"
-* extension[organization][0].extension[period].valuePeriod.end = "2025-12-31"
+* associatedParty[0].role = #funding-source
+* associatedParty[0].party = Reference(sample-organization)
+* associatedParty[0].name = "National Institute on Drug Abuse(NIDA)"
+* associatedParty[0].period.start = "2024-01-01"
+* associatedParty[0].period.end = "2025-12-31"
 * extension[teamContact][0].valueContactDetail.name = "Dr John Smith"
 * extension[teamContact][0].valueContactDetail.telecom[0].system = #phone
 * extension[teamContact][0].valueContactDetail.telecom[0].value = "555-555-5555"
