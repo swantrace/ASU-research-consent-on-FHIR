@@ -51,7 +51,7 @@ Title: "Provision Obligation"
 Description: "The obligation of the consent."
 * extension contains 
     type 1..1 and
-    reference 0..* and
+    reference 0..* 
 * extension[type].value[x] only CodeableConcept 
 * extension[type].valueCodeableConcept from ObligationValueSet
 * extension[reference].value[x] only CodeableReference
