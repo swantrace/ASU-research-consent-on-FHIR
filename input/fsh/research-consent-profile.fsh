@@ -46,9 +46,9 @@ Description: "The obligation of the consent."
 * include codes from system ObligationCodeSystem
 
 Extension: ProvisionObligation
-Id: ASU.consent-obligation
+Id: ASU.provision-obligation
 Title: "Consent Obligation"
-Description: "The obligation of the consent."
+Description: "The obligation of the provision."
 * extension contains 
     type 1..1 and
     reference 0..* 
