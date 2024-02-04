@@ -2,11 +2,13 @@ CodeSystem: ProvisionActionCodeSystem
 Id: ASU.provision-action-code-system
 Title: "Provision Action Code System"
 Description: "The action of the consent."
-* #reuse "Reuse"
-* #recontact "Recontact"
-* #test "Test"
+* #use-specimen "Use Specimen"
+* #reuse-specimen "Reuse Specimen"
+* #collect-specimen "Collect Specimen"
+* #recontact-participant "Recontact Participant"
+* #test-specimen "Test Specimen"
 * #treat "Treat"
-* #notify "Notify"
+* #notify-result "Notify Result"
 
 ValueSet: ProvisionActionValueSet
 Id: ASU.provision-action-value-set
@@ -14,19 +16,6 @@ Title: "Provision Action Value Set"
 Description: "The action of the consent."
 * include codes from system ProvisionActionCodeSystem
 * include codes from system http://hl7.org/fhir/ValueSet/consent-action
-
-CodeSystem: ExtendedResourceTypeCodeSystem
-Id: ASU.extended-resource-type-code-system
-Title: "Extended Resource Type Code System"
-Description: "The resource type of the extended resource."
-* #ResearchStudyResult "Research Study Result"
-
-ValueSet: ExtendedResourceTypeValueSet
-Id: ASU.extended-resource-type-value-set
-Title: "Extended Resource Type Value Set"
-Description: "The resource type of the extended resource."
-* include codes from system ExtendedResourceTypeCodeSystem
-* include codes from system http://hl7.org/fhir/ValueSet/resource-types
 
 Extension: ResearchSubjectReference
 Id: ASU.research-subject-reference
@@ -62,15 +51,10 @@ Title: "Provision Obligation"
 Description: "The obligation of the consent."
 * extension contains 
     type 1..1 and
-    reference 0..* and
-    period 0..1 and
-    parent 0..1
+    reference 0..* 
 * extension[type].value[x] only CodeableConcept 
 * extension[type].valueCodeableConcept from ObligationValueSet
 * extension[reference].value[x] only CodeableReference
-* extension[period].value[x] only Period
-* extension[parent].value[x] only CodeableConcept
-* extension[parent].valueCodeableConcept from ObligationValueSet
 
 Extension: ProvisionActionPurpose
 Id: ASU.provision-action-purpose
@@ -78,6 +62,12 @@ Title: "Provision Action Purpose"
 Description: "The purpose of the action."
 * value[x] only CodeableReference
 
+Extension: RecontactMethod
+Id: ASU.recontact-method
+Title: "Recontact method"
+Description: "Recontact method"
+* value[x] only CodeableConcept
+* valueCodeableConcept from $CONTACT-METHOD
 
 Profile:         ResearchConsent
 Parent:          Consent
@@ -89,4 +79,5 @@ Description:     "A profile to participate in research protocol and information 
 * extension contains WitnessReference named witness 0..*
 * extension contains ProvisionObligation named obligation 0..*
 * provision.extension contains ProvisionActionPurpose named actionPurpose 0..*
+* provision.extension contains RecontactMethod named recontactMethod 0..*
 * provision.action from ProvisionActionValueSet
