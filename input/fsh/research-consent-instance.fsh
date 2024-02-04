@@ -2,6 +2,7 @@ Instance: sample-research-consent
 InstanceOf: ASU.research-consent
 Description: "A consent for a research study."
 
+* language = #en-US
 * status = #active
 * grantor[0] = Reference(sample-patient)
 * grantee[0] = Reference(sample-organization)

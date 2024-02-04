@@ -45,9 +45,9 @@ Title: "Obligation Value Set"
 Description: "The obligation of the consent."
 * include codes from system ObligationCodeSystem
 
-Extension: ProvisionObligation
-Id: ASU.provision-obligation
-Title: "Provision Obligation"
+Extension: ObligationExtension
+Id: ASU.consent-obligation
+Title: "Consent Obligation"
 Description: "The obligation of the consent."
 * extension contains 
     type 1..1 and
@@ -77,7 +77,7 @@ Description:     "A profile to participate in research protocol and information 
 * date 1..1 MS
 * extension contains ResearchSubjectReference named researchSubject 1..1 MS
 * extension contains WitnessReference named witness 0..*
-* extension contains ProvisionObligation named obligation 0..*
+* extension contains ObligationExtension named obligation 0..*
 * provision.extension contains ProvisionActionPurpose named actionPurpose 0..*
 * provision.extension contains RecontactMethod named recontactMethod 0..*
 * provision.action from ProvisionActionValueSet
