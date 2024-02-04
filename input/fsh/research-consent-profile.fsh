@@ -62,6 +62,12 @@ Title: "Provision Action Purpose"
 Description: "The purpose of the action."
 * value[x] only CodeableReference
 
+Extension: RecontactMethod
+Id: ASU.recontact-method
+Title: "Recontact method"
+Description: "Recontact method"
+* value[x] only CodeableConcept
+* valueCodeableConcept from $CONTACT-METHOD
 
 Profile:         ResearchConsent
 Parent:          Consent
@@ -72,4 +78,5 @@ Description:     "A profile to participate in research protocol and information 
 * extension contains WitnessReference named witness 0..*
 * extension contains ProvisionObligation named obligation 0..*
 * provision.extension contains ProvisionActionPurpose named actionPurpose 0..*
+* provision.extension contains RecontactMethod named recontactMethod 0..*
 * provision.action from ProvisionActionValueSet
