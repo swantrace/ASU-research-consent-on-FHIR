@@ -9,6 +9,10 @@ Description: "A consent for a research study."
 * date = "2017-01-01"
 * decision = #deny
 
+* subject = Reference(sample-patient)
+* extension[researchSubject].valueReference = Reference(sample-researchsubject)
+* extension[witness][0].valueReference = Reference(sample-witness) 
+
 * provision[0].action = #recontact-participant
 * provision[0].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies.
@@ -60,6 +64,3 @@ A description of this clinical trial will be available on http://www.ClinicalTri
 * provision[5].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 You permit the researchers to record your session and use it for their research. Again, if you choose not to have the sessions recorded you may still take part in the study.
 """
-
-* extension[witness][0].valueReference = Reference(sample-witness) 
-* extension[researchSubject].valueReference = Reference(sample-researchsubject)
