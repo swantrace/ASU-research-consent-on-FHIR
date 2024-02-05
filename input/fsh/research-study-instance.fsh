@@ -68,4 +68,3 @@ Taking part in this study is up to you. You may decide not to take part or you m
 * extension[participantTermination][0].valueCodeableReference.concept.text = """
 You may be withdrawn from the study by the investigator or sponsor at any time without your consent for various reasons. Reasons may include, but not be limited to, the study seeming to be harmful to you; you being unable to follow study procedures; or you being unable to keep study appointments. During the course of the study, we will inform you of any new findings that may affect your desire to continue in the study.
 """
-* extension[projectDuration].valueCodeableConcept.text = "1 year"

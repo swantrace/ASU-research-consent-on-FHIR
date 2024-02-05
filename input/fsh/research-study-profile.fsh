@@ -10,12 +10,6 @@ Title: "Study Team Contact Information Extension"
 Description: "An extension that indicates the contact information for the study team."
 * value[x] only ContactDetail
 
-Extension: ResearchStudyProjectDuration
-Id: ASU.research-study-project-duration
-Title: "Research Study Project Duration Extension"
-Description: "An extension that describes the duration of the research study."
-* value[x] only CodeableConcept
-
 Extension: ResearchStudyProcedures
 Id: ASU.research-study-procedures
 Title: "Research Study Procedures Extension"
@@ -89,4 +83,3 @@ Description: "This profile defines the minimum required information for a Resear
 * extension contains ResearchStudyAlternativeProcedures named alternativeProcedures 1..* MS
 * extension contains ResearchStudyWithdraw named withdraw 1..* MS
 * extension contains ResearchStudyParticipantTermination named participantTermination 1..* MS
-* extension contains ResearchStudyProjectDuration named projectDuration 1..1 MS
