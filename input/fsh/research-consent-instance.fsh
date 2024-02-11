@@ -25,8 +25,8 @@ Taking part in this study is up to you. You may decide not to take part or you m
 
 * provision[1].action = #access
 * provision[1].resourceType = #Observation
-* provision[1].code[1] = $LOINC#LP14443-3 "CD4"
-* provision[1].code[2] = $LOINC#48511-0 "HIV viral load"
+* provision[1].code[0] = $LOINC#LP14443-3 "CD4"
+* provision[1].code[1] = $LOINC#48511-0 "HIV viral load"
 * provision[1].extension[actionPurpose][0].valueCodeableReference.concept.text = """
 The purpose of completing these forms is to allow study staff to access your medical records at this hospital system and various clinics and agencies in the community.
 """
