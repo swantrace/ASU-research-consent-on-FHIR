@@ -56,8 +56,8 @@ Description: "The obligation of the provision."
 * extension[type].valueCodeableConcept from ObligationValueSet
 * extension[reference].value[x] only CodeableReference
 
-Extension: ProvisionActionPurpose
-Id: ASU.provision-action-purpose
+Extension: ProvisionPurposeNote
+Id: ASU.provision-purpose-note
 Title: "Provision Action Purpose"
 Description: "The purpose of the action."
 * value[x] only CodeableReference
@@ -77,7 +77,7 @@ Description:     "A profile to participate in research protocol and information 
 * date 1..1 MS
 * extension contains ResearchSubjectReference named researchSubject 1..1 MS
 * extension contains WitnessReference named witness 0..*
-* provision.extension contains ProvisionActionPurpose named actionPurpose 0..*
+* provision.extension contains ProvisionPurposeNote named purposeNote 0..*
 * provision.extension contains RecontactMethod named recontactMethod 0..*
 * provision.extension contains ProvisionObligation named obligation 0..*
 * provision.action from ProvisionActionValueSet
