@@ -36,8 +36,8 @@ The purpose of completing these forms is to allow study staff to access your med
 * provision[3].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
 Recordings will be identified by number only. Your name will not be noted by the study staff or reviewer on any recordings.
 """
-* provision[4].extension[obligation][1].extension[type][0].valueCodeableConcept.coding[0] = #informationConfidentiality
-* provision[4].extension[obligation][1].extension[reference][0].valueCodeableReference.concept.text = """
+* provision[4].extension[obligation][0].extension[type][0].valueCodeableConcept.coding[0] = #informationConfidentiality
+* provision[4].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
 The researchers will use the Certificate to protect against any demands for information that would identify you. However, if we learn about abuse of a child or elderly person or that you intend to harm yourself or someone else, or about certain communicable diseases, we will report that to the proper authorities.
 """
 
