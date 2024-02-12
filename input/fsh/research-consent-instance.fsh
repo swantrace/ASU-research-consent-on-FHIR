@@ -14,7 +14,8 @@ Description: "A consent for a research study."
 * extension[witness][0].valueReference = Reference(sample-witness) 
 
 * provision[0].action = #recontact-participant
-* provision[0].extension[actionPurpose][0].valueCodeableReference.concept.text = """
+* provision[0].purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH "clinical trial research"
+* provision[0].extension[purposeNote][0].valueCodeableReference.concept.text = """
 If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies.
 """
 
@@ -27,7 +28,8 @@ Taking part in this study is up to you. You may decide not to take part or you m
 * provision[2].resourceType = #Observation
 * provision[2].code[0] = $LOINC#LP14443-3 "CD4"
 * provision[2].code[1] = $LOINC#48511-0 "HIV viral load"
-* provision[2].extension[actionPurpose][0].valueCodeableReference.concept.text = """
+* provision[2].purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH "clinical trial research"
+* provision[2].extension[purposeNote][0].valueCodeableReference.concept.text = """
 The purpose of completing these forms is to allow study staff to access your medical records at this hospital system and various clinics and agencies in the community.
 """
 * provision[3].extension[obligation][0].extension[type][0].valueCodeableConcept.coding[0] = #informationDeidentification
@@ -60,6 +62,7 @@ A description of this clinical trial will be available on http://www.ClinicalTri
 * provision[9].code[3] = $SCT#1820004 "Ethanol measurement"
 
 * provision[10].action = #use-specimen
-* provision[10].extension[actionPurpose][0].valueCodeableReference.concept.text = """
+* provision[10].purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#CLINTRCH "clinical trial research"
+* provision[10].extension[purposeNote][0].valueCodeableReference.concept.text = """
 You permit the researchers to record your session and use it for their research. Again, if you choose not to have the sessions recorded you may still take part in the study.
 """
