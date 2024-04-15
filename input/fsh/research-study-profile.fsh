@@ -16,12 +16,6 @@ Title: "Research Study Procedures Extension"
 Description: "An extension that describes the procedures that will be performed on participants in the research study."
 * value[x] only CodeableReference
 
-Extension: ResearchStudyConfidentiality
-Id: ASU.research-study-confidentiality
-Title: "Research Study Confidentiality Extension"
-Description: "An extension that indicates the confidentiality of the research study."
-* value[x] only CodeableReference
-
 Extension: ResearchStudyCompensation
 Id: ASU.research-study-compensation
 Title: "Research Study Compensation Extension"

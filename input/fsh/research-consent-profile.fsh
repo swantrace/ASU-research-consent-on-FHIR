@@ -8,7 +8,7 @@ Description: "The action of the consent."
 * #recontact-participant "Recontact Participant"
 * #test-specimen "Test Specimen"
 * #treat "Treat"
-* #notify-result "Notify Result"
+* #share-result "Notify Result or Share"
 
 ValueSet: ProvisionActionValueSet
 Id: ASU.provision-action-value-set
@@ -36,7 +36,6 @@ Description: "The obligation of the consent."
 * #sampleUsageLimitation "Sample Usage Limitation"
 * #studyResultSharing "Study Result Sharing"
 * #participantDisenrollment "Participant Disenrollment"
-* #informationConfidentiality "Information Confidentiality"
 * #informationDeidentification "Information Deidentification"
 * #legalFoundationOrAuthority "Certification (or) Regulatory compliance (or) Legal basis"
 
