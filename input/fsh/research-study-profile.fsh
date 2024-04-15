@@ -16,12 +16,6 @@ Title: "Research Study Procedures Extension"
 Description: "An extension that describes the procedures that will be performed on participants in the research study."
 * value[x] only CodeableReference
 
-Extension: ResearchStudyConfidentiality
-Id: ASU.research-study-confidentiality
-Title: "Research Study Confidentiality Extension"
-Description: "An extension that indicates the confidentiality of the research study."
-* value[x] only CodeableReference
-
 Extension: ResearchStudyCompensation
 Id: ASU.research-study-compensation
 Title: "Research Study Compensation Extension"
@@ -74,7 +68,6 @@ Description: "This profile defines the minimum required information for a Resear
 * objective 1..* MS
 * description 1..1 MS
 * extension contains StudyTeamContactInformation named teamContact 1..* MS
-* extension contains ResearchStudyConfidentiality named confidentiality 1..* MS
 * extension contains ResearchStudyCompensation named compensation 1..* MS
 * extension contains ResearchStudyCost named cost 1..* MS
 * extension contains ResearchStudyBenefits named benefits 1..* MS
