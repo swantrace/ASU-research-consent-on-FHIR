@@ -74,7 +74,6 @@ Description: "This profile defines the minimum required information for a Resear
 * objective 1..* MS
 * description 1..1 MS
 * extension contains StudyTeamContactInformation named teamContact 1..* MS
-* extension contains ResearchStudyConfidentiality named confidentiality 1..* MS
 * extension contains ResearchStudyCompensation named compensation 1..* MS
 * extension contains ResearchStudyCost named cost 1..* MS
 * extension contains ResearchStudyBenefits named benefits 1..* MS
