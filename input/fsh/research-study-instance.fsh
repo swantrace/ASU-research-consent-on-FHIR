@@ -27,11 +27,7 @@ The study involves up to 14 visits over a period of 12 months. As part of the st
 * extension[teamContact][0].valueContactDetail.name = "Dr John Smith"
 * extension[teamContact][0].valueContactDetail.telecom[0].system = #phone
 * extension[teamContact][0].valueContactDetail.telecom[0].value = "555-555-5555"
-* extension[confidentiality][0].valueCodeableReference.concept.text = """
-Information that you give to us in this study will be kept private. The investigator and his/her collaborators will consider your records confidential. The Food and Drug Administration (FDA) and Department of Health and Human Services (DHHS) may review your records. Authorized Columbia University and University of Miami employees, [insert name of institution providing local oversight] employees or other agents who will be bound by the same provisions of confidentiality may also review your records for audit purposes.
 
-To keep your information private, most of your study records will have a unique research ID number instead of your name on them. To help protect your privacy, the study researchers have obtained a Federal Certificate of Confidentiality from the National Institutes of Health. With this Certificate, the researchers cannot be forced, even by a court order, to share research information that may identify you in any civil, criminal, administrative, legislative, or other proceedings in any court.
-"""
 * extension[compensation][0].valueCodeableReference.concept.text = """
 All study participants will be given payment for their time and effort in taking part in this study. All study participants may receive compensation of up to $130 in cash or vouchers (gift cards). Payment will be made after completion of the following activities:
 
