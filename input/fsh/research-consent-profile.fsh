@@ -38,6 +38,7 @@ Description: "The obligation of the consent."
 * #participantDisenrollment "Participant Disenrollment"
 * #informationConfidentiality "Information Confidentiality"
 * #informationDeidentification "Information Deidentification"
+* #legalFoundationOrAuthority "Certification (or) Regulatory compliance (or) Legal basis"
 
 ValueSet: ObligationValueSet
 Id: ASU.obligation-value-set
@@ -51,10 +52,12 @@ Title: "Consent Obligation"
 Description: "The obligation of the provision."
 * extension contains 
     type 1..1 and
-    reference 0..* 
+    reference 0..* and
+    period 0..1 
 * extension[type].value[x] only CodeableConcept 
 * extension[type].valueCodeableConcept from ObligationValueSet
 * extension[reference].value[x] only CodeableReference
+* extension[period].value[x] only Period
 
 Extension: ProvisionPurposeNote
 Id: ASU.provision-purpose-note
