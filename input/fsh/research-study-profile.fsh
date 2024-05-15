@@ -58,6 +58,33 @@ Title: "Research Study Participant Termination Extension"
 Description: "An extension that describes the procedures for terminating a participant from the research study."
 * value[x] only CodeableReference
 
+Extension: ResearchStudyDuration
+Id: ASU.research-study-duration
+Title: "Research Study Duration Extension"
+Description: "An extension that describes the duration of the research study."
+* value[x] only Duration
+
+Extension: ResearchStudyUnforeseeableRisks
+Id: ASU.research-study-unforeseeable-risks
+Title: "Research Study Unforeseeable Risks Extension"
+Description: "An extension that describes any unforeseeable risks or adverse effects participants might face by participating in the research study."
+* value[x] only Coding
+* valueCoding.system = $YES-NO
+
+Extension: ResearchStudyVoluntaryParticipation
+Id: ASU.research-study-voluntary-participation
+Title: "Research Study Voluntary Participation Extension"
+Description: "An extension that indicates whether participation in the research study is voluntary."
+* value[x] only Coding
+* valueCoding.system = $YES-NO
+
+Extension: ResearchStudyWholeGenomeSequencing
+Id: ASU.research-study-whole-genome-sequencing
+Title: "Research Study Whole Genome Sequencing Extension"
+Description: "An extension that indicates whether whole genome sequencing will be performed on participants in the research study."
+* value[x] only Coding
+* valueCoding.system = $YES-NO
+
 Profile: ResearchStudyWithConsent
 Parent: ResearchStudy
 Id: ASU.research-study-with-consent
@@ -76,3 +103,7 @@ Description: "This profile defines the minimum required information for a Resear
 * extension contains ResearchStudyAlternativeProcedures named alternativeProcedures 1..* MS
 * extension contains ResearchStudyWithdraw named withdraw 1..* MS
 * extension contains ResearchStudyParticipantTermination named participantTermination 1..* MS
+* extension contains ResearchStudyDuration named duration 1..1 MS
+* extension contains ResearchStudyUnforeseeableRisks named unforeseeableRisks 0..1 MS
+* extension contains ResearchStudyVoluntaryParticipation named voluntaryParticipation 0..1 MS
+* extension contains ResearchStudyWholeGenomeSequencing named wholeGenomeSequencing 0..1 MS
