@@ -58,15 +58,20 @@ Title: "Obligation Value Set"
 Description: "The obligation of the consent."
 * include codes from system ObligationCodeSystem
 
-Invariant: provision-obligation-injury-related-type
+Invariant: provision-obligation-reference-coding
 Severity: #error
-Description: "The code 'injuryTreatment', 'injuryRisk', 'injuryCompensation' must have a reference and the data type of extension('reference') should be Coding."
-Expression: "extension('type').value.coding.code in {'injuryTreatment', 'injuryRisk', 'injuryCompensation'} implies extension('reference').value is Coding"
+Description: "The code 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', and 'injuryCompensation' must have a reference and the data type of extension('reference') should be Coding."
+Expression: "extension('type').value.coding.code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'} implies extension('reference').value is Coding"
 
-Invariant: provision-obligation-unique-injury-related
-Description: "The code 'injuryTreatment', 'injuryRisk', 'injuryCompensation' must appear at most once in the provision.obligation element."
+Invariant: provision-obligation-distinct-codes
+Description: "The code 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', and 'injuryCompensation' must appear at most once in the provision.obligation element."
 Severity: #error
-Expression: "extension('type').value.coding.where(code in {'injuryTreatment', 'injuryRisk', 'injuryCompensation'}).isDistinct()"
+Expression: "extension('type').value.coding.where(code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'}).isDistinct()"
+
+Invariant: provision-obligation-reference-limit
+Severity: #error
+Description: "The reference should be limited to 0..1 when the code is 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', or 'injuryCompensation'."
+Expression: "extension('type').value.coding.code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'} implies (extension('reference').count() <= 1)"
 
 
 Extension: ProvisionObligation
@@ -82,8 +87,9 @@ Description: "The obligation of the provision."
 * extension[reference].value[x] only CodeableReference or Coding
 * extension[reference].valueCoding.system = $YES-NO
 * extension[period].value[x] only Period
-* obeys provision-obligation-injury-related-type
-* obeys provision-obligation-unique-injury-related
+* obeys provision-obligation-reference-coding
+* obeys provision-obligation-distinct-codes
+* obeys provision-obligation-reference-limit
 
 Extension: ProvisionPurposeNote
 Id: ASU.provision-purpose-note
