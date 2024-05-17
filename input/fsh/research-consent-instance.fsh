@@ -18,6 +18,8 @@ Description: "A consent for a research study."
 * provision[0].extension[purposeNote][0].valueCodeableReference.concept.text = """
 If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies.
 """
+* provision[0].extension[recontactMethod].valueCodeableConcept.coding[0].code = #phone
+* provision[0].extension[recontactMethod].valueCodeableConcept.coding[0].display = "Phone"
 
 * provision[1].extension[obligation][0].extension[type][0].valueCoding.code = #participant-disenrollment
 * provision[1].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
