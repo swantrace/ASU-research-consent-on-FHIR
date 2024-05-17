@@ -1,7 +1,7 @@
 CodeSystem: ProvisionActionCodeSystem
-Id: ASU.provision-action-code-system
+Id: provision-action-code-system
 Title: "Provision Action Code System"
-Description: "The action of the consent.
+Description: "The action of the consent."
 * #procedure "Procedure"
 * #use-specimen "Use Specimen"
 * #reuse-specimen "Reuse Specimen"
@@ -15,7 +15,7 @@ Description: "The action of the consent.
 * #commercial-profit "Commercial Profit"
 
 ValueSet: ProvisionActionValueSet
-Id: ASU.provision-action-value-set
+Id: provision-action-value-set
 Title: "Provision Action Value Set"
 Description: "The action of the consent."
 * include codes from system ProvisionActionCodeSystem
@@ -27,19 +27,19 @@ Severity: #error
 Expression: "provision.action.where(code='commercial-profit').count() <= 1"
 
 Extension: ResearchSubjectReference
-Id: ASU.research-subject-reference
+Id: research-subject-reference
 Title: "Research Subject Reference"
 Description: "A reference to a ResearchSubject resource."
 * value[x] only Reference(ResearchSubjectWithConsent)
 
 Extension: WitnessReference
-Id: ASU.witness-reference
+Id: witness-reference
 Title: "Witness Reference"
 Description: "A reference to witness."
 * value[x] only Reference(Organization or Patient or Practitioner or RelatedPerson)
 
 CodeSystem: ObligationCodeSystem
-Id: ASU.obligation-code-system
+Id: obligation-code-system
 Title: "Obligation Code System"
 Description: "The obligation of the consent."
 * #sample-usage-limitation "Sample Usage Limitation"
@@ -55,7 +55,7 @@ Description: "The obligation of the consent."
 * #injury-treatment "Injury Treatment"
 
 ValueSet: ObligationValueSet
-Id: ASU.obligation-value-set
+Id: obligation-value-set
 Title: "Obligation Value Set"
 Description: "The obligation of the consent."
 * include codes from system ObligationCodeSystem
@@ -77,7 +77,7 @@ Expression: "extension('type').value.coding.code in {'result-sharing-after-study
 
 
 Extension: ProvisionObligation
-Id: ASU.provision-obligation
+Id: provision-obligation
 Title: "Consent Obligation"
 Description: "The obligation of the provision."
 * extension contains 
@@ -94,13 +94,13 @@ Description: "The obligation of the provision."
 * obeys provision-obligation-reference-limit
 
 Extension: ProvisionPurposeNote
-Id: ASU.provision-purpose-note
+Id: provision-purpose-note
 Title: "Provision Action Purpose"
 Description: "The purpose of the action."
 * value[x] only CodeableReference
 
 Extension: RecontactMethod
-Id: ASU.recontact-method
+Id: recontact-method
 Title: "Recontact method"
 Description: "Recontact method"
 * value[x] only CodeableConcept
@@ -108,7 +108,7 @@ Description: "Recontact method"
 
 Profile:         ResearchConsent
 Parent:          Consent
-Id:              ASU.research-consent
+Id:              research-consent
 Title:           "Research Consent Profile"
 Description:     "A profile to participate in research protocol and information sharing required"
 * date 1..1 MS

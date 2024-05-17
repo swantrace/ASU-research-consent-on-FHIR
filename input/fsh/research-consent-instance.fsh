@@ -1,5 +1,5 @@
 Instance: sample-research-consent
-InstanceOf: ASU.research-consent
+InstanceOf: research-consent
 Description: "A consent for a research study."
 
 * language = #en-US
