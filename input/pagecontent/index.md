@@ -1,4 +1,4 @@
-# ASU FHIR Research Consent 
+# ASU FHIR Research Consent
 
 The goal of this project to model consents for clinical trials using the FHIR Consent resource.
 
@@ -56,7 +56,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "participantDisenrollment"
+                "code": "participant-disenrollment"
               }
             ]
           }
@@ -79,7 +79,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "informationDeidentification"
+                "code": "information-deidentification"
               }
             ]
           }
@@ -102,7 +102,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "sampleUsageLimitation"
+                "code": "sample-usage-limitation"
               }
             ]
           }

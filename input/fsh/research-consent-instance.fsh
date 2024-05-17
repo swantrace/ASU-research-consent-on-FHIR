@@ -19,7 +19,7 @@ Description: "A consent for a research study."
 If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies.
 """
 
-* provision[1].extension[obligation][0].extension[type][0].valueCoding.code = #participantDisenrollment
+* provision[1].extension[obligation][0].extension[type][0].valueCoding.code = #participant-disenrollment
 * provision[1].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
 Taking part in this study is up to you. You may decide not to take part or you may leave the study at any time. Your decision will not result in any penalty or loss of benefits to which you are entitled. If you withdraw your consent for this study at any time, no further contact will be made. You may be withdrawn from the study by the investigator or sponsor at any time without your consent for various reasons. Reasons may include, but not be limited to, the study seeming to be harmful to you; you being unable to follow study procedures; or you being unable to keep study appointments. During the course of the study, we will inform you of any new findings that may affect your desire to continue in the study.
 """
@@ -32,7 +32,7 @@ Taking part in this study is up to you. You may decide not to take part or you m
 * provision[2].extension[purposeNote][0].valueCodeableReference.concept.text = """
 The purpose of completing these forms is to allow study staff to access your medical records at this hospital system and various clinics and agencies in the community.
 """
-* provision[3].extension[obligation][0].extension[type][0].valueCoding.code = #informationDeidentification
+* provision[3].extension[obligation][0].extension[type][0].valueCoding.code = #information-deidentification
 * provision[3].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
 Recordings will be identified by number only. Your name will not be noted by the study staff or reviewer on any recordings.
 """
@@ -43,14 +43,14 @@ The researchers will use the Certificate to protect against any demands for info
 
 * provision[5].action = #collect-specimen
 * provision[5].code[0] = $SPECIMEN-TYPE#BLD
-* provision[6].extension[obligation][0].extension[type][0].valueCoding.code = #sampleUsageLimitation
+* provision[6].extension[obligation][0].extension[type][0].valueCoding.code = #sample-usage-limitation
 * provision[6].extension[obligation][0].extension[reference][0].valueCodeableReference.concept.text = """
 Only study staff will have access to them. Study records (including audio recordings) will be stored for at least six years.
 """
 
 * provision[7].action = #treat
 * provision[7].resourceType = #Patient
-* provision[8].extension[obligation][0].extension[type][0].valueCoding.code = #studyResultSharingAfterStudy
+* provision[8].extension[obligation][0].extension[type][0].valueCoding.code = #result-sharing-after-study
 * provision[8].extension[obligation][0].extension[reference][0].valueCoding = $YES-NO#Y "Yes"
 
 * provision[9].action = #test-specimen

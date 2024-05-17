@@ -1,7 +1,8 @@
 CodeSystem: ProvisionActionCodeSystem
 Id: ASU.provision-action-code-system
 Title: "Provision Action Code System"
-Description: "The action of the consent."
+Description: "The action of the consent.
+* #procedure "Procedure"
 * #use-specimen "Use Specimen"
 * #reuse-specimen "Reuse Specimen"
 * #collect-specimen "Collect Specimen"
@@ -41,16 +42,17 @@ CodeSystem: ObligationCodeSystem
 Id: ASU.obligation-code-system
 Title: "Obligation Code System"
 Description: "The obligation of the consent."
-* #sampleUsageLimitation "Sample Usage Limitation"
-* #studyResultSharingAfterStudy "After study, result sharing"
-* #studyResultSharingDuringStudy "During study, result sharing"
-* #participantDisenrollment "Participant Disenrollment"
-* #informationDeidentification "Information Deidentification"
-* #legalFoundationOrAuthority "Certification (or) Regulatory compliance (or) Legal basis"
-* #commercialProfitSharing "Commercial Profit Sharing"
-* #injuryRisk "Injury Risk"
-* #injuryCompensation "Injury Compensation"
-* #injuryTreatment "Injury Treatment"
+* #sample-usage-limitation "Sample Usage Limitation"
+* #result-sharing-after-study "After study, result sharing"
+* #result-sharing-during-study "During study, result sharing"
+* #participant-disenrollment "Participant Disenrollment"
+* #information-confidentiality "Information Confidentiality"
+* #information-deidentification "Information Deidentification"
+* #legal-foundation-or-authority "Certification (or) Regulatory compliance (or) Legal basis"
+* #commerical-profit-sharing "Commercial Profit Sharing"
+* #injury-risk "Injury Risk"
+* #injury-compensation "Injury Compensation"
+* #injury-treatment "Injury Treatment"
 
 ValueSet: ObligationValueSet
 Id: ASU.obligation-value-set
@@ -60,18 +62,18 @@ Description: "The obligation of the consent."
 
 Invariant: provision-obligation-reference-coding
 Severity: #error
-Description: "The code 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', and 'injuryCompensation' must have a reference and the data type of extension('reference') should be Coding."
-Expression: "extension('type').value.coding.code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'} implies extension('reference').value is Coding"
+Description: "The code 'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', and 'injury-compensation' must have a reference and the data type of extension('reference') should be Coding."
+Expression: "extension('type').value.coding.code in {'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', 'injury-compensation'} implies extension('reference').value is Coding"
 
 Invariant: provision-obligation-distinct-codes
-Description: "The code 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', and 'injuryCompensation' must appear at most once in the provision.obligation element."
+Description: "The code 'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', and 'injury-compensation' must appear at most once in the provision.obligation element."
 Severity: #error
-Expression: "extension('type').value.coding.where(code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'}).isDistinct()"
+Expression: "extension('type').value.coding.where(code in {'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', 'injury-compensation'}).isDistinct()"
 
 Invariant: provision-obligation-reference-limit
 Severity: #error
-Description: "The reference should be limited to 0..1 when the code is 'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', or 'injuryCompensation'."
-Expression: "extension('type').value.coding.code in {'studyResultSharingAfterStudy', 'studyResultSharingDuringStudy', 'commercialProfitSharing', 'injuryTreatment', 'injuryRisk', 'injuryCompensation'} implies (extension('reference').count() <= 1)"
+Description: "The reference should be limited to 0..1 when the code is 'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', or 'injury-compensation'."
+Expression: "extension('type').value.coding.code in {'result-sharing-after-study', 'result-sharing-during-study', 'commerical-profit-sharing', 'injury-treatment', 'injury-risk', 'injury-compensation'} implies (extension('reference').count() <= 1)"
 
 
 Extension: ProvisionObligation
