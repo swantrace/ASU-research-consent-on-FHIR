@@ -1,7 +1,8 @@
 Profile: ResearchSubjectWithConsent
 Parent: ResearchSubject
-Id: ASU.research-subject-with-consent
+Id: research-subject-with-consent
 Title: "Research Subject with Consent Profile"
 Description: "Research Subject with Consent Profile"
-* study only Reference(ResearchStudy)
+* study only Reference(ResearchStudyWithConsent)
+* consent 1..*
 * consent only Reference(ResearchConsent)

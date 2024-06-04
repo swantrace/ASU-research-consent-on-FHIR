@@ -1,4 +1,4 @@
-# ASU FHIR Research Consent 
+# ASU FHIR Research Consent
 
 The goal of this project to model consents for clinical trials using the FHIR Consent resource.
 
@@ -10,18 +10,18 @@ The goal of this project to model consents for clinical trials using the FHIR Co
   "id": "sample-research-consent",
   "meta": {
     "profile": [
-      "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.research-consent"
+      "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/research-consent"
     ]
   },
   "extension": [
     {
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.research-subject-reference",
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/research-subject-reference",
       "valueReference": {
         "reference": "sample-researchsubject"
       }
     },
     {
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.witness-reference",
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/witness-reference",
       "valueReference": {
         "reference": "RelatedPerson/sample-witness"
       }
@@ -47,7 +47,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           }
         }
       ],
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-obligation"
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-obligation"
     },
     {
       "extension": [
@@ -56,7 +56,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "participantDisenrollment"
+                "code": "participant-disenrollment"
               }
             ]
           }
@@ -70,7 +70,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           }
         }
       ],
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-obligation"
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-obligation"
     },
     {
       "extension": [
@@ -79,7 +79,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "informationDeidentification"
+                "code": "information-deidentification"
               }
             ]
           }
@@ -93,7 +93,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           }
         }
       ],
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-obligation"
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-obligation"
     },
     {
       "extension": [
@@ -102,7 +102,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           "valueCodeableConcept": {
             "coding": [
               {
-                "code": "sampleUsageLimitation"
+                "code": "sample-usage-limitation"
               }
             ]
           }
@@ -116,7 +116,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           }
         }
       ],
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-obligation"
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-obligation"
     },
     {
       "extension": [
@@ -139,14 +139,14 @@ The goal of this project to model consents for clinical trials using the FHIR Co
           }
         }
       ],
-      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-obligation"
+      "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-obligation"
     }
   ],
   "provision": [
     {
       "extension": [
         {
-          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-action-purpose",
+          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-action-purpose",
           "valueCodeableReference": {
             "concept": {
               "text": "If you choose to be in this study, we would like to contact you in the future to let you know about new opportunities to take part in future studies. If you choose not to be contacted in the future about other studies, you can still take part in this study. By checking yes and writing your initials below, you permit the researchers to contact you in the future to let you know about other studies."
@@ -172,7 +172,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
     {
       "extension": [
         {
-          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-action-purpose",
+          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-action-purpose",
           "valueCodeableReference": {
             "concept": {
               "text": "The purpose of completing these forms is to allow study staff to access your medical records at this hospital system and various clinics and agencies in the community."
@@ -323,7 +323,7 @@ The goal of this project to model consents for clinical trials using the FHIR Co
     {
       "extension": [
         {
-          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/ASU.provision-action-purpose",
+          "url": "https://github.com/mojitoj/ASU-research-consent-on-FHIR/StructureDefinition/provision-action-purpose",
           "valueCodeableReference": {
             "concept": {
               "text": "You permit the researchers to record your session and use it for their research. Again, if you choose not to have the sessions recorded you may still take part in the study."

@@ -1,5 +1,5 @@
 Instance: example-researchsubject
-InstanceOf: ASU.research-subject-with-consent
+InstanceOf: research-subject-with-consent
 Description: "Example ResearchSubject with consent"
 
 * status = #active

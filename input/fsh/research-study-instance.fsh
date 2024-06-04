@@ -1,5 +1,5 @@
 Instance: sample-researchstudy
-InstanceOf: ASU.research-study-with-consent
+InstanceOf: research-study-with-consent
 Description: "This is an example of a Research Study with Consent."
 
 * status = #active
@@ -64,3 +64,13 @@ Taking part in this study is up to you. You may decide not to take part or you m
 * extension[participantTermination][0].valueCodeableReference.concept.text = """
 You may be withdrawn from the study by the investigator or sponsor at any time without your consent for various reasons. Reasons may include, but not be limited to, the study seeming to be harmful to you; you being unable to follow study procedures; or you being unable to keep study appointments. During the course of the study, we will inform you of any new findings that may affect your desire to continue in the study.
 """
+
+* extension[duration][0].valueDuration[0].value = 12
+* extension[duration][0].valueDuration[0].system = "http://unitsofmeasure.org"
+* extension[duration][0].valueDuration[0].code = #mo
+
+* extension[unforeseeableRisks][0].valueCoding = $YES-NO#Y "Yes"
+
+* extension[voluntaryParticipation][0].valueCoding = $YES-NO#Y "Yes"
+
+* extension[wholeGenomeSequencing][0].valueCoding = $YES-NO#Y "Yes"
